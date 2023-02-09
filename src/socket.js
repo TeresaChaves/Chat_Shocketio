@@ -7,8 +7,19 @@ const URL = "http://localhost:8000";
 //     reconnection: false,
 // });
 
-const socket = io("//url", {
-    transports: ['websocket'],
+// const socket = io("//url", {
+//     transports: ['websocket'],
+// });
+
+
+const socket = io("http://domainname:8080", {
+    withCredentials: true,
+    extraHeaders: {
+        "my-custom-header": "abcd"
+    }
 });
+
+
+
 
 export default socket
