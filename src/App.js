@@ -11,6 +11,10 @@ const ROOT_CSS = css({
   width: "100%",
 });
 
+const socket = require("socket.io-client")("https://example.com", {
+  rejectUnauthorized: false // WARN: please do not do this in production
+});
+
 function App() {
   // state
   const [username, setUsername] = useState("");
@@ -112,7 +116,7 @@ function App() {
     // setConnected(true);
     socket.auth = { username };
     socket.connect();
-    console.log(socket);
+    // console.log(socket);
 
     setTimeout(() => {
       if (socket.connected) {
