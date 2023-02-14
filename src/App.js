@@ -11,9 +11,7 @@ const ROOT_CSS = css({
   width: "100%",
 });
 
-const socket = require("socket.io-client")("https://example.com", {
-  rejectUnauthorized: false // WARN: please do not do this in production
-});
+
 
 function App() {
   // state
